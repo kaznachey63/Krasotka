@@ -131,6 +131,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Docs\algorithm.drawio" />
     <None Include="Docs\alorithm.pdf" />
     <None Include="Docs\erd_diagram.pdf" />
     <None Include="Docs\Руководство.docx" />

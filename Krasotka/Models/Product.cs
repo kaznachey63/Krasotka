@@ -1,0 +1,60 @@
+namespace Krasotka.Models
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("Product")]
+    public partial class Product
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            OrderProduct = new HashSet<OrderProduct>();
+        }
+
+        public int Id { get; set; }
+
+        [StringLength(255)]
+        public string Article { get; set; }
+
+        public int? ProductNameId { get; set; }
+
+        public int? UnitId { get; set; }
+
+        public int? Price { get; set; }
+
+        public int? DiscountProbably { get; set; }
+
+        public int? ManufacturerId { get; set; }
+
+        public int? SupplierId { get; set; }
+
+        public int? CategoryId { get; set; }
+
+        public int? DiscountActual { get; set; }
+
+        public int? Amount { get; set; }
+
+        [StringLength(255)]
+        public string Description { get; set; }
+
+        [StringLength(255)]
+        public string Photo { get; set; }
+
+        public virtual Category Category { get; set; }
+
+        public virtual Manufacturer Manufacturer { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
+
+        public virtual ProductName ProductName { get; set; }
+
+        public virtual Supplier Supplier { get; set; }
+
+        public virtual Unit Unit { get; set; }
+    }
+}
